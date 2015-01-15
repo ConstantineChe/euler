@@ -3,8 +3,7 @@
 
 (apply + (for [x (lazy-cat [1 2] (map + (rest fib) fib))
                       :while (<= x 4000000)
-                      :when (even? x)]
-                  x))
+                      :when (even? x)] x))
 
 (defn fib2 [max]
   (loop [fibs (list 2 1)]
