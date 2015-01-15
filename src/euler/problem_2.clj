@@ -1,7 +1,8 @@
 (ns euler.problem-2
   (:require [clojure.core.match :refer [match]]))
 
-(apply + (for [x (lazy-cat [1 2] (map + (rest fib) fib))
+(def fib-seq  (lazy-cat [0 1] (map + (rest fib-seq) fib-seq)))
+(apply + (for [x fib-seq
                       :while (<= x 4000000)
                       :when (even? x)] x))
 
