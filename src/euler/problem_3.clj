@@ -30,6 +30,8 @@
 (defn lpf [x]
   (filter #(empty? (factors %)) (factors x)))
 
+(map factors (range 1 21))
+
 (time (lpf 600851475143))
 
 (largest-fact 600851475143)
